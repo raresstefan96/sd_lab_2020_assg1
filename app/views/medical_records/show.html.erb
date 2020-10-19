@@ -1,0 +1,6 @@
+<%= @medical_record.user.name %>
+<%= @medical_record.expiry_date %>
+<% @medical_record.medical_record_items.each do |item| %>
+  <p><%= item.medicine.name%></p>
+  <p><%= item.prescription %> x <%= item.medicine.dosage %> <%= item.medicine.unit %></p>
+<% end %>

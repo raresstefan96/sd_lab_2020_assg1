@@ -1,0 +1,8 @@
+<%= form_for @medical_record do |f| %>
+  <%= text_field_tag :prescription %>
+  <% Medicine.all.each do |medicine |%>
+    <%= radio_button_tag :medicine_id, medicine.id, medicine.name %>
+    <%= label_tag "medicine_id_#{medicine.id}", medicine.name %>
+  <% end %>
+  <%= f.submit %>
+<% end %>
